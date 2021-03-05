@@ -1,8 +1,40 @@
 <!DOCTYPE html>
 <html>
-<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create two unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+  height: 400px;
+}
+.column2 {
+  float: left;
+  padding: 10px;
+  height: 700px;
+}
+
+.left {
+  width: 50%;
+}
+
+.right {
+  width: 50%;
+}
+.quarter {
+  width: 25%;
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 .button {
   background-color: white;
   border: 2px solid #FF0000;
@@ -65,22 +97,6 @@ body {
   background-color: #ddd;
   color: black;
 }
-
-/* Create two unequal columns that floats next to each other */
-/* Left column */
-.leftcolumn {   
-  float: left;
-  width: 50%;
-}
-
-/* Right column */
-.rightcolumn {
-  float: left;
-  width: 50%;
-  background-color: #f1f1f1;
-  padding-left: 20px;
-}
-
 /* Add a card effect for articles */
 .card {
   background-color: white;
@@ -110,6 +126,72 @@ body {
     width: 100%;
   }
 }
+/* All button settinsgs are below */
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
 </style>
 </head>
 <body>
@@ -120,47 +202,92 @@ body {
 </div>
 
 <div class="topnav">
-  <a href="#">Scripts</a>
-  <a href="#">Data Packs</a>
-  <a href="#">Donations</a>
-  <a href="https://www.spigotmc.org/conversations/add?to=DED_Y">Support</a>
+  <a href="https://www.spigotmc.org/conversations/add?to=DED_Y">Click here to get support</a>
 </div>
 
 <div class="row">
-  <div class="leftcolumn">
+  <div class="column left" style="background-color:#bbb;">
     <div class="card">
-      <img src="ScriptsTitle.png">
+      <img src="ScriptsTitle.png" class="center">
 		<h5>Click on the buttons below if you want to check out the resources!</h5>
 		<ul>
-			<p><button class="button button" onclick=" window.open('https://www.spigotmc.org/resources/serverlock-skript.89197/','_blank')">ServerLock</button>
-			<p><button class="button button" onclick=" window.open('https://www.spigotmc.org/resources/rulesjoin-skript.89538/','_blank')">RulesJoin</button>
+			<p><button class="glow-on-hover" onclick=" window.open('https://www.spigotmc.org/resources/serverlock-skript.89197/','_blank')" type="button">ServerLock</button>
+			<p><button class="glow-on-hover" onclick=" window.open('https://www.spigotmc.org/resources/rulesjoin-skript.89538/','_blank')" type="button">RulesJoin</button>
 		</ul>
 	</div>
-	
+  </div>
+  <div class="column right" style="background-color:#bbb;">
     <div class="card">
       <img src="DataPacksTitle.png">
 		<h5>Click on the buttons below if you want to check out the resources!</h5>
 		<ul>
-			<p><button class="button button" onclick=" window.open('https://github.com/itsneyoa/tb-datapack-1/releases/tag/v1.0','_blank')">TB Events mob pve data pack</button>
-			<p><button class="button button" onclick=" window.open('https://github.com/IGDT/tb-datapack-smp/releases','_blank')">TB Events smp data pack</button>
+			<p><button class="glow-on-hover" onclick=" window.open('https://github.com/itsneyoa/tb-datapack-1/releases/tag/v1.0','_blank')" type="button">TB Events mob pve data pack</button>
+			<p><button class="glow-on-hover" onclick=" window.open('https://github.com/IGDT/tb-datapack-smp/releases','_blank')" type="button">TB Events smp data pack</button>
 		</ul>    
+	</div>
   </div>
-  
-  <div class="rightcolumn">
-    <div class="card">
-      <h2>About Me</h2>
-      <img src="myskin.png">
-      <p><i>I am a new developper that wants to give out as many unique creations as possible.</i></p>
-    </div>
+</div>
 
+<div class="row">
+  <div class="column left" style="background-color:#bbb;">
+    <div class="card">
+      <img src="Plugins.png" class="center">
+		<h5>This section will open later...</h5>
+		<ul>
+			<p><button class="glow-on-hover" onclick=" window.open('https://www.google.com','_blank')" type="button">Click me</button>
+		</ul>
+	</div>
+  </div>
+  <div class="column right" style="background-color:#bbb;">
+    <div class="card">
+      <img src="Suggestions.png">
+		<h5>Click on the buttons below to send me your requests & suggestions.</h5>
+		<ul>
+			<button class="glow-on-hover" onclick=" window.open('https://discord.com/','_blank')" type="button">Discord- IGDT#8927</button>
+			<button class="glow-on-hover" onclick=" window.open('https://www.spigotmc.org/conversations/add?to=DED_Y','_blank')" type="button">Spigot Forums</button>
+		</ul>    
+	</div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="column2 quarter" style="background-color:#bbb;">
+	<div class="card">
+		<h2>About me</h2>
+		<img src="myskin.png">
+		<p><i>I am a new developper that wants to give out as many unique creations as possible.</i></p>
+		<p><i>On the spigot forums, I am known as DED_Y. My Minecraft username is IGDT.</i></p>
+	</div>
+  </div>
+  <div class="column2 quarter" style="background-color:#bbb;">
     <div class="card">
       <h3>Donations</h3>
 		<p>You enjoy my work, and you have some spare money over? Feel free to donate it using the button below.</p>
 		<i><p>This hasn't been setup for now and will be done later...</p></i>
-		<p><button class="button button" onclick=" window.open('https://www.google.com','_blank')">Click to donate here</button>
+		<button class="glow-on-hover" onclick=" window.open('','_blank')" type="button">Click to donate here</button>
+    </div>
+  </div>
+  <div class="column2 quarter" style="background-color:#bbb;">
+    <div class="card">
+      <h3>Discord</h3>
+		<p>My discord tag is <a href="https://discord.com/">IGDT#8927</a>
+		<i><p>(Use this only if you find something gamebreaking!)</p></i>
+    </div>
+  </div>
+  <div class="column2 quarter" style="background-color:#bbb;">
+    <div class="card">
+      <h3><i>coming later</i></h3>
     </div>
   </div>
 </div>
+
+<footer>
+  <h2>Terms of Service</h2>
+  <p>1. You are permitted to adjust code to your liking but I do not support any damage you may cause while doing so.</p>
+  <p>2. You are not permitted to sell, give or redistribute this skript as your own in any way.</p>
+  <p>3. You can't claim any of my code as your own.</p>
+  <p>© 2021 All rights reserved.</p>
+</footer>
 
 </body>
 </html>
