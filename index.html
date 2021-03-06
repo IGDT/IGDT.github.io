@@ -2,197 +2,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-}
-
-/* Create two unequal columns that floats next to each other */
-.column {
-  float: left;
-  padding: 10px;
-  height: 400px;
-}
-.column2 {
-  float: left;
-  padding: 10px;
-  height: 700px;
-}
-
-.left {
-  width: 50%;
-}
-
-.right {
-  width: 50%;
-}
-.quarter {
-  width: 25%;
-}
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.button {
-  background-color: white;
-  border: 2px solid #FF0000;
-  border-radius: 12px;
-  color: black;
-  padding: 14px 40px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-}
-.button:hover {
-  background-color: #FF0000;
-  color: white
-}
-.button:active {
-  background-color: #FF0000;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial;
-  padding: 10px;
-  background: #f1f1f1;
-}
-
-/* Header/Blog Title */
-.header {
-  padding: 30px;
-  text-align: center;
-  background: white;
-}
-
-.header h1 {
-  font-size: 50px;
-}
-
-/* Style the top navigation bar */
-.topnav {
-  overflow: hidden;
-  background-color: #333;
-}
-
-/* Style the topnav links */
-.topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-/* Change color on hover */
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-/* Add a card effect for articles */
-.card {
-  background-color: white;
-  padding: 20px;
-  margin-top: 20px;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 800px) {
-  .leftcolumn, .rightcolumn {   
-    width: 100%;
-    padding: 0;
-  }
-}
-
-/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-@media screen and (max-width: 400px) {
-  .topnav a {
-    float: none;
-    width: 100%;
-  }
-}
-/* All button settinsgs are below */
-.glow-on-hover {
-    width: 220px;
-    height: 50px;
-    border: none;
-    outline: none;
-    color: #fff;
-    background: #111;
-    cursor: pointer;
-    position: relative;
-    z-index: 0;
-    border-radius: 10px;
-}
-
-.glow-on-hover:before {
-    content: '';
-    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-    position: absolute;
-    top: -2px;
-    left:-2px;
-    background-size: 400%;
-    z-index: -1;
-    filter: blur(5px);
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-    animation: glowing 20s linear infinite;
-    opacity: 0;
-    transition: opacity .3s ease-in-out;
-    border-radius: 10px;
-}
-
-.glow-on-hover:active {
-    color: #000
-}
-
-.glow-on-hover:active:after {
-    background: transparent;
-}
-
-.glow-on-hover:hover:before {
-    opacity: 1;
-}
-
-.glow-on-hover:after {
-    z-index: -1;
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #111;
-    left: 0;
-    top: 0;
-    border-radius: 10px;
-}
-
-@keyframes glowing {
-    0% { background-position: 0 0; }
-    50% { background-position: 400% 0; }
-    100% { background-position: 0 0; }
-}
-footer {
-  background-color: #777;
-  padding: 10px;
-  text-align: center;
-  color: white;
-}
-</style>
+<link rel = "stylesheet" type = "text/css" href = "style.css" /> 
 </head>
 <body>
 
@@ -202,7 +12,7 @@ footer {
 </div>
 
 <div class="topnav">
-  <a href="https://www.spigotmc.org/conversations/add?to=DED_Y">Click here to get support</a>
+  <strong><a href="https://www.spigotmc.org/conversations/add?to=DED_Y">Click here to get support</a></strong>
 </div>
 
 <div class="row">
@@ -221,7 +31,7 @@ footer {
       <img src="DataPacksTitle.png">
 		<h5>Click on the buttons below if you want to check out the resources!</h5>
 		<ul>
-			<p><button class="glow-on-hover" onclick=" window.open('https://github.com/itsneyoa/tb-datapack-1/releases/tag/v1.0','_blank')" type="button">TB Events mob pve data pack</button>
+			<p><button class="glow-on-hover" onclick=" window.open('https://github.com/itsneyoa/tb-datapack-1/releases','_blank')" type="button">TB Events mob pve data pack</button>
 			<p><button class="glow-on-hover" onclick=" window.open('https://github.com/IGDT/tb-datapack-smp/releases','_blank')" type="button">TB Events smp data pack</button>
 		</ul>    
 	</div>
@@ -234,14 +44,14 @@ footer {
       <img src="Plugins.png" class="center">
 		<h5>This section will open later...</h5>
 		<ul>
-			<p><button class="glow-on-hover" onclick=" window.open('https://www.google.com','_blank')" type="button">Click me</button>
+			<p><button class="glow-on-hover" onclick=" window.open('https://www.google.com','_blank')" type="button">Coming soon</button>
 		</ul>
 	</div>
   </div>
   <div class="column right" style="background-color:#bbb;">
     <div class="card">
       <img src="Suggestions.png">
-		<h5>Click on the buttons below to send me your requests & suggestions.</h5>
+		<h5>Click on the buttons below for requests or suggestions</h5>
 		<ul>
 			<button class="glow-on-hover" onclick=" window.open('https://discord.com/','_blank')" type="button">Discord- IGDT#8927</button>
 			<button class="glow-on-hover" onclick=" window.open('https://www.spigotmc.org/conversations/add?to=DED_Y','_blank')" type="button">Spigot Forums</button>
@@ -255,16 +65,19 @@ footer {
 	<div class="card">
 		<h2>About me</h2>
 		<img src="myskin.png">
-		<p><i>I am a new developper that wants to give out as many unique creations as possible.</i></p>
-		<p><i>On the spigot forums, I am known as DED_Y. My Minecraft username is IGDT.</i></p>
+		<p>I am a new developper that wants to give out as many unique creations as possible.</p>
+		<p>On the spigot forums, I am known as DED_Y. My Minecraft username is IGDT.</p>
 	</div>
   </div>
   <div class="column2 quarter" style="background-color:#bbb;">
     <div class="card">
       <h3>Donations</h3>
 		<p>You enjoy my work, and you have some spare money over? Feel free to donate it using the button below.</p>
-		<i><p>This hasn't been setup for now and will be done later...</p></i>
-		<button class="glow-on-hover" onclick=" window.open('','_blank')" type="button">Click to donate here</button>
+			<form action="https://www.paypal.com/donate" method="post" target="_top">
+			<input type="hidden" name="hosted_button_id" value="6QD7Z5K9QQZXQ" />
+			<input type="image" src="https://www.paypalobjects.com/en_US/BE/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+			<img alt="" border="0" src="https://www.paypal.com/en_BE/i/scr/pixel.gif" width="1" height="1" />
+			</form>
     </div>
   </div>
   <div class="column2 quarter" style="background-color:#bbb;">
